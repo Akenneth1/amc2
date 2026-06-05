@@ -1,0 +1,26 @@
+# Dépendances
+node_modules/
+.DS_Store
+dist/
+dist-ssr/
+*.local
+
+# Environnement (SÉCURITÉ : Ne jamais supprimer ces lignes)
+.env
+.env.production
+.env.development
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Éditeurs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

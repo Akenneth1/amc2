@@ -6,54 +6,25 @@ import { renderGalerie } from './galerie.js';
 import { initPayPal }    from './paypal.js';
 
 // ── NAVIGATE (SPA) ────────────────────────────────────────────
-export async function navigate(page) {
-  console.log('Navigating to:', page);
-  
+// Les pages sont déjà injectées dans le DOM au build — pas de fetch nécessaire.
+export function navigate(page) {
   if (page === 'admin' && !sessionStorage.getItem('amc_admin_session')) {
     page = 'admin-login';
   }
 
-  const appDiv = document.getElementById('app');
-  if (!appDiv) return;
-
-  let target = document.getElementById('page-' + page);
-
-  // Chargement dynamique si la page n'est pas encore injectée
-  if (!target) {
-    try {
-      // Détecte automatiquement la base (local ou GitHub Pages)
-      const base = import.meta.env.BASE_URL || './';
-      const response = await fetch(`${base}src/pages/${page}.html`);
-      if (response.ok) {
-        const html = await response.text();
-        target = document.createElement('div');
-        target.id = 'page-' + page;
-        target.className = 'page';
-        target.innerHTML = html;
-        appDiv.appendChild(target);
-      } else {
-        console.error('Page non trouvée:', page);
-        return;
-      }
-    } catch (e) {
-      console.error('Erreur de chargement:', e);
-      return;
-    }
-  }
-
-  // Activation de la page
+  // Masquer toutes les pages, afficher la cible
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (!target) { console.error('Page introuvable dans le DOM:', page); return; }
   target.classList.add('active');
 
-  // Mise à jour de la navigation
+  // Nav active
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const navEl = document.getElementById('nav-' + page);
   if (navEl) navEl.classList.add('active');
 
-  // Retour en haut de page
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  
-  // Réinitialisation des animations et logique spécifique
+
   setTimeout(() => {
     observeReveal();
     try {
@@ -62,13 +33,8 @@ export async function navigate(page) {
       if (page === 'evenements')  renderEvents('tous');
       if (page === 'festival')    renderExposants();
       if (page === 'galerie')     renderGalerie();
-      
-      if (['don', 'festival', 'paiement'].includes(page)) {
-        initPayPal();
-      }
-    } catch (err) {
-      console.warn('Init error:', err);
-    }
+      if (['don', 'festival', 'paiement'].includes(page)) initPayPal();
+    } catch (err) { console.warn('Init error on page', page, err); }
   }, 100);
 }
 

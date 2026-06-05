@@ -16,15 +16,14 @@ import { filterGalerie, renderGalerie, renderGalerieHome } from './galerie.js';
 function filterEvents(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  if (typeof window.renderEvents === 'function') window.renderEvents(cat);
+  if (typeof renderEvents === 'function') renderEvents(cat);
 }
 
 // ── MONTANT DON ───────────────────────────────────────────────
-let selectedMontant = 50;
+window.selectedMontant = 50;
 function selectMontant(btn, val) {
   document.querySelectorAll('.montant-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  selectedMontant = val;
   window.selectedMontant = val;
 }
 
@@ -51,34 +50,19 @@ window.cmsUpdateHome     = cmsUpdateHome;
 window.exportCSV         = exportCSV;
 
 // ── INIT ──────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   applyStoredTheme();
   initNavScroll();
   initLiquidBg();
 
-  // Chargement de la page d'accueil
-  try {
-    await navigate('accueil');
-    
-    // Application des changements CMS locaux (Demo)
-    const storedTitle = localStorage.getItem('amc_home_title');
-    const storedSub   = localStorage.getItem('amc_home_sub');
-    if (storedTitle) {
-      const h1 = document.querySelector('.hero-title');
-      if (h1) h1.innerHTML = storedTitle;
-    }
-    if (storedSub) {
-      const p = document.querySelector('.hero-subtitle');
-      if (p) p.textContent = storedSub;
-    }
+  // Les pages sont déjà dans le DOM — on active juste l'accueil
+  navigate('accueil');
+  initLogo3D();
+  observeReveal();
+  renderGalerieHome();
+  initFestivalCountdown();
 
-    initLogo3D();
-    renderGalerieHome();
-    initFestivalCountdown();
-  } catch (err) {
-    console.error('Initial navigation failed:', err);
-  }
-
+  // Counters (déclenché quand visible)
   const counterSection = document.querySelector('.chiffres-section');
   if (counterSection) {
     const io = new IntersectionObserver(([entry]) => {

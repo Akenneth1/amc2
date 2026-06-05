@@ -17,16 +17,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22 # Version stable recommandée
-          cache: 'npm'
-
-      - name: Diagnostic
-        run: |
-          echo "Vérification du fichier package.json :"
-          cat package.json
-
+          node-version: 20 # Retour à la version 20 pour tester la stabilité
+          
       - name: Install dependencies
-        run: npm ci # Utilise le package-lock.json pour une installation identique
+        run: |
+          rm -f package-lock.json
+          npm install --no-package-lock
 
       - name: Build
         run: npm run build

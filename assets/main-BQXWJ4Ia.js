@@ -40,7 +40,7 @@ import{initializeApp as R}from"https://www.gstatic.com/firebasejs/10.7.1/firebas
       </div>`}catch{e.innerHTML="<p>Erreur chargement.</p>"}}}function be(){alert("Export CSV indisponible en mode démo.")}function Ee(){const e=document.getElementById("galerieGrid");e&&(e.innerHTML=m.map(n=>`
     <div class="galerie-full-item" data-cat="${n.cat}"
          onclick="openLightbox(this)">
-      <img src="/${n.src}" alt="${n.alt}" loading="lazy" onerror="this.src='/logo.png'; this.style.opacity='0.5';">
+      <img src="${n.src}" alt="${n.alt}" loading="lazy" onerror="this.src='/amc2/logo.png'; this.style.opacity='0.5';">
       <div class="galerie-full-overlay">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
              stroke="white" stroke-width="1.5">
@@ -49,7 +49,7 @@ import{initializeApp as R}from"https://www.gstatic.com/firebasejs/10.7.1/firebas
       </div>
     </div>`).join(""))}function we(e,n){document.querySelectorAll(".galerie-cat-btn").forEach(i=>i.classList.remove("active")),n.classList.add("active"),document.querySelectorAll(".galerie-full-item").forEach(i=>{i.style.opacity="0",i.style.transform="scale(0.95)",setTimeout(()=>{const t=i.dataset.cat,a=e==="tous"||e===t||e==="festivals"&&t==="defiles"||e==="backstage"&&t==="backstages";i.style.display=a?"block":"none",a&&setTimeout(()=>{i.style.opacity="1",i.style.transform="scale(1)",i.style.transition="opacity .3s, transform .3s"},20)},150)})}function Le(){const e=document.querySelector(".galerie-grid");if(!e)return;const n=[...m.filter(t=>t.cat==="defiles").slice(0,3),...m.filter(t=>t.cat==="expositions").slice(0,2),...m.filter(t=>t.cat==="concerts").slice(0,2),...m.filter(t=>t.cat==="backstages").slice(0,1)],i=["tall","","wide","","","tall","",""];e.innerHTML=n.map((t,a)=>`
     <div class="galerie-item ${i[a]||""}" onclick="openLightbox(this)">
-      <img src="/${t.src}" alt="${t.alt}" loading="lazy" onerror="this.src='/logo.png';">
+      <img src="${t.src}" alt="${t.alt}" loading="lazy" onerror="this.src='/amc2/logo.png';">
       <div class="galerie-overlay">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
              stroke="white" stroke-width="1.5">

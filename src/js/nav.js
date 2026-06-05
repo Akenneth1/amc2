@@ -21,8 +21,9 @@ export async function navigate(page) {
   // Chargement dynamique si la page n'est pas encore injectée
   if (!target) {
     try {
-      // Utilisation d'un chemin relatif './' pour GitHub Pages
-      const response = await fetch(`./src/pages/${page}.html`);
+      // Détecte automatiquement la base (local ou GitHub Pages)
+      const base = import.meta.env.BASE_URL || './';
+      const response = await fetch(`${base}src/pages/${page}.html`);
       if (response.ok) {
         const html = await response.text();
         target = document.createElement('div');

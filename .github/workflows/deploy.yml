@@ -42,8 +42,10 @@ jobs:
 
       - name: Copy static assets to dist
         run: |
-          cp -r public/galerie dist/galerie
-          cp -r public/photo-annexes dist/photo-annexes
+          mkdir -p dist/galerie
+          mkdir -p dist/photo-annexes
+          cp -r public/galerie/. dist/galerie/
+          cp -r public/photo-annexes/. dist/photo-annexes/
           cp public/logo.png dist/logo.png
 
       - name: Deploy to GitHub Pages

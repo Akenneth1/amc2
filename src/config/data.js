@@ -51,7 +51,7 @@ export const evenements = [
     titre: 'After Work Piano Bar',
     date: 'À PARTIR DU 26 JUIN 2025 · CENTRAL HOSTEL, LILLE',
     desc: 'Rendez-vous mensuel autour du piano dans un cadre intimiste et élégant pour terminer la semaine en beauté.',
-    img: 'galerie/défilé/480712816_608440235387057_8403607310011299154_n.jpg'
+    img: 'galerie/defile/480712816_608440235387057_8403607310011299154_n.jpg'
   },
   {
     id: 'fete-musique-2025',
@@ -83,7 +83,7 @@ export const evenements = [
     titre: 'Exposition & Défilé Mode et Culture',
     date: '4 NOV. 2023 · PLACE SÉBASTOPOL, LILLE',
     desc: 'Premier grand événement d\'AMC mêlant exposition artistique et défilé de mode dans l\'un des lieux iconiques de Lille.',
-    img: 'galerie/défilé/480712816_608440235387057_8403607310011299154_n.jpg'
+    img: 'galerie/defile/480712816_608440235387057_8403607310011299154_n.jpg'
   }
 ];
 
@@ -99,25 +99,25 @@ export const galerieImages = [
   { src: 'galerie/concerts/483563526_618806101017137_4543469384887453948_n.jpg', cat: 'concerts', alt: 'Concert 2' },
   { src: 'galerie/concerts/483601817_618966741001073_5278090855474888729_n.jpg', cat: 'concerts', alt: 'Concert 3' },
   // Défilés
-  { src: 'galerie/défilé/480712816_608440235387057_8403607310011299154_n.jpg',  cat: 'defiles', alt: 'Défilé 1' },
-  { src: 'galerie/défilé/483349989_618966877667726_2241248726068483989_n.jpg',  cat: 'defiles', alt: 'Défilé 2' },
-  { src: 'galerie/défilé/483355188_618966804334400_2090516695424882729_n.jpg',  cat: 'defiles', alt: 'Défilé 3' },
-  { src: 'galerie/défilé/483357026_618967084334372_5700571063987618327_n.jpg',  cat: 'defiles', alt: 'Défilé 4' },
-  { src: 'galerie/défilé/483358430_618967044334376_1026100490462477127_n.jpg',  cat: 'defiles', alt: 'Défilé 5' },
-  { src: 'galerie/défilé/483360091_618966907667723_4823745665046697621_n.jpg',  cat: 'defiles', alt: 'Défilé 6' },
-  { src: 'galerie/défilé/483361071_618966864334394_6779193753052041618_n.jpg',  cat: 'defiles', alt: 'Défilé 7' },
-  { src: 'galerie/défilé/483363271_618967004334380_6753600701977649369_n.jpg',  cat: 'defiles', alt: 'Défilé 8' },
-  { src: 'galerie/défilé/483364501_618966747667739_5684989046803649680_n.jpg',  cat: 'defiles', alt: 'Défilé 9' },
-  { src: 'galerie/défilé/483365226_618966834334397_7049891636629386225_n.jpg',  cat: 'defiles', alt: 'Défilé 10' },
-  { src: 'galerie/défilé/483366014_618967177667696_6698046105104225187_n.jpg',  cat: 'defiles', alt: 'Défilé 11' },
-  { src: 'galerie/défilé/483368648_618966821001065_6223246756326395759_n.jpg',  cat: 'defiles', alt: 'Défilé 12' },
-  { src: 'galerie/défilé/483488472_618967167667697_7471697935474561291_n.jpg',  cat: 'defiles', alt: 'Défilé 13' },
-  { src: 'galerie/défilé/483488991_618966711001076_7346727947991655038_n.jpg',  cat: 'defiles', alt: 'Défilé 14' },
-  { src: 'galerie/défilé/483504575_618966814334399_8330919529165964489_n.jpg',  cat: 'defiles', alt: 'Défilé 15' },
-  { src: 'galerie/défilé/483507209_618966937667720_2061252704893513512_n.jpg',  cat: 'defiles', alt: 'Défilé 16' },
-  { src: 'galerie/défilé/483511239_618966774334403_4423579860401880320_n.jpg',  cat: 'defiles', alt: 'Défilé 17' },
-  { src: 'galerie/défilé/483525229_618966894334391_45712332276326500_n.jpg',    cat: 'defiles', alt: 'Défilé 18' },
-  { src: 'galerie/défilé/483527748_618966971001050_7259697559630947894_n.jpg',  cat: 'defiles', alt: 'Défilé 19' },
+  { src: 'galerie/defile/480712816_608440235387057_8403607310011299154_n.jpg',  cat: 'defiles', alt: 'Défilé 1' },
+  { src: 'galerie/defile/483349989_618966877667726_2241248726068483989_n.jpg',  cat: 'defiles', alt: 'Défilé 2' },
+  { src: 'galerie/defile/483355188_618966804334400_2090516695424882729_n.jpg',  cat: 'defiles', alt: 'Défilé 3' },
+  { src: 'galerie/defile/483357026_618967084334372_5700571063987618327_n.jpg',  cat: 'defiles', alt: 'Défilé 4' },
+  { src: 'galerie/defile/483358430_618967044334376_1026100490462477127_n.jpg',  cat: 'defiles', alt: 'Défilé 5' },
+  { src: 'galerie/defile/483360091_618966907667723_4823745665046697621_n.jpg',  cat: 'defiles', alt: 'Défilé 6' },
+  { src: 'galerie/defile/483361071_618966864334394_6779193753052041618_n.jpg',  cat: 'defiles', alt: 'Défilé 7' },
+  { src: 'galerie/defile/483363271_618967004334380_6753600701977649369_n.jpg',  cat: 'defiles', alt: 'Défilé 8' },
+  { src: 'galerie/defile/483364501_618966747667739_5684989046803649680_n.jpg',  cat: 'defiles', alt: 'Défilé 9' },
+  { src: 'galerie/defile/483365226_618966834334397_7049891636629386225_n.jpg',  cat: 'defiles', alt: 'Défilé 10' },
+  { src: 'galerie/defile/483366014_618967177667696_6698046105104225187_n.jpg',  cat: 'defiles', alt: 'Défilé 11' },
+  { src: 'galerie/defile/483368648_618966821001065_6223246756326395759_n.jpg',  cat: 'defiles', alt: 'Défilé 12' },
+  { src: 'galerie/defile/483488472_618967167667697_7471697935474561291_n.jpg',  cat: 'defiles', alt: 'Défilé 13' },
+  { src: 'galerie/defile/483488991_618966711001076_7346727947991655038_n.jpg',  cat: 'defiles', alt: 'Défilé 14' },
+  { src: 'galerie/defile/483504575_618966814334399_8330919529165964489_n.jpg',  cat: 'defiles', alt: 'Défilé 15' },
+  { src: 'galerie/defile/483507209_618966937667720_2061252704893513512_n.jpg',  cat: 'defiles', alt: 'Défilé 16' },
+  { src: 'galerie/defile/483511239_618966774334403_4423579860401880320_n.jpg',  cat: 'defiles', alt: 'Défilé 17' },
+  { src: 'galerie/defile/483525229_618966894334391_45712332276326500_n.jpg',    cat: 'defiles', alt: 'Défilé 18' },
+  { src: 'galerie/defile/483527748_618966971001050_7259697559630947894_n.jpg',  cat: 'defiles', alt: 'Défilé 19' },
   // Expositions
   { src: 'galerie/expositions/482249128_618966844334396_1053770020662939835_n.jpg', cat: 'expositions', alt: 'Exposition 1' },
   { src: 'galerie/expositions/482250275_618966884334392_6967045390271826367_n.jpg', cat: 'expositions', alt: 'Exposition 2' },

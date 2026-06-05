@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  // 'base' configuré en relatif './' pour que le site fonctionne 
-  // quel que soit le nom du repo GitHub (ex: github.io/AMC-site-web/)
-  base: './',
+  // 'base' configuré avec le nom de votre repo GitHub pour que 
+  // les liens (CSS, JS, Images) fonctionnent sur GitHub Pages.
+  base: '/amc2/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    // Assure que les fichiers HTML dans src/pages sont inclus dans le build
     rollupOptions: {
       input: {
         main: 'index.html',

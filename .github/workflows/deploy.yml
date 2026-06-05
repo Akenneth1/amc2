@@ -40,6 +40,12 @@ jobs:
           VITE_ADMIN_EMAIL: ${{ secrets.VITE_ADMIN_EMAIL }}
           VITE_ADMIN_HASH: ${{ secrets.VITE_ADMIN_HASH }}
 
+      - name: Copy static assets to dist
+        run: |
+          cp -r public/galerie dist/galerie
+          cp -r public/photo-annexes dist/photo-annexes
+          cp public/logo.png dist/logo.png
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

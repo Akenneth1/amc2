@@ -11,29 +11,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/styles/base.css" />
-  <link rel="stylesheet" href="/styles/nav.css" />
-  <link rel="stylesheet" href="/styles/components.css" />
-  <link rel="stylesheet" href="/styles/pages.css" />
-  <link rel="stylesheet" href="/styles/admin.css" />
-  <link rel="stylesheet" href="/styles/utils.css" />
+  <!-- Chemins relatifs pour assurer la compatibilité GitHub Pages -->
+  <link rel="stylesheet" href="./styles/base.css" />
+  <link rel="stylesheet" href="./styles/nav.css" />
+  <link rel="stylesheet" href="./styles/components.css" />
+  <link rel="stylesheet" href="./styles/pages.css" />
+  <link rel="stylesheet" href="./styles/admin.css" />
+  <link rel="stylesheet" href="./styles/utils.css" />
 
-  <!-- PayPal SDK -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR" defer></script>
 </head>
 <body>
 
-  <!-- Arrière-plan animé -->
   <div class="liquid-bg" aria-hidden="true">
     <div class="liquid-orb"></div>
     <div class="liquid-orb"></div>
     <div class="liquid-orb"></div>
   </div>
 
-  <!-- Navigation -->
   <nav id="mainNav">
     <div class="nav-logo" onclick="navigate('accueil')" aria-label="Retour à l'accueil">
-      <img src="/logo.png" alt="Art Mode & Culture" />
+      <img src="./logo.png" alt="Art Mode & Culture" />
     </div>
     <ul class="nav-links">
       <li><a onclick="navigate('accueil')"      id="nav-accueil"     class="active">Accueil</a></li>
@@ -55,7 +53,6 @@
     <div class="hamburger" onclick="openMobile()" aria-label="Menu"><span></span><span></span><span></span></div>
   </nav>
 
-  <!-- Menu mobile -->
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
     <button class="mobile-close" onclick="closeMobile()" aria-label="Fermer">&times;</button>
     <a onclick="navigate('accueil');closeMobile()">Accueil</a>
@@ -69,22 +66,19 @@
     <a onclick="navigate('contact');closeMobile()">Contact</a>
   </div>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
     <img class="lightbox-content" id="lightboxImg" alt="">
     <div id="lightboxCaption"></div>
   </div>
 
-  <!-- ═══ APP SPA ═══ -->
   <main id="app"></main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/logo.png" alt="Art Mode & Culture" />
+          <img src="./logo.png" alt="Art Mode & Culture" />
           <p>Association culturelle loi 1901 basée à Lille, engagée pour la promotion de l'art, de la mode et de la culture.</p>
           <div class="footer-socials">
             <a href="https://www.facebook.com/artmodeetculture" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
@@ -127,6 +121,6 @@
     </div>
   </footer>
 
-  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

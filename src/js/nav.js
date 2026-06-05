@@ -14,17 +14,15 @@ export async function navigate(page) {
   }
 
   const appDiv = document.getElementById('app');
-  if (!appDiv) {
-    console.error('Container #app not found!');
-    return;
-  }
+  if (!appDiv) return;
 
   let target = document.getElementById('page-' + page);
 
   // Chargement dynamique si la page n'est pas encore injectée
   if (!target) {
     try {
-      const response = await fetch(`/src/pages/${page}.html`);
+      // Utilisation d'un chemin relatif './' pour GitHub Pages
+      const response = await fetch(`./src/pages/${page}.html`);
       if (response.ok) {
         const html = await response.text();
         target = document.createElement('div');
@@ -32,13 +30,12 @@ export async function navigate(page) {
         target.className = 'page';
         target.innerHTML = html;
         appDiv.appendChild(target);
-        console.log(`Page ${page} fetched and injected.`);
       } else {
-        console.error(`Page not found: /src/pages/${page}.html (Status: ${response.status})`);
+        console.error('Page non trouvée:', page);
         return;
       }
     } catch (e) {
-      console.error(`Error loading page ${page}:`, e);
+      console.error('Erreur de chargement:', e);
       return;
     }
   }
@@ -65,12 +62,11 @@ export async function navigate(page) {
       if (page === 'festival')    renderExposants();
       if (page === 'galerie')     renderGalerie();
       
-      // Réinitialisation PayPal pour les pages concernées
       if (['don', 'festival', 'paiement'].includes(page)) {
         initPayPal();
       }
     } catch (err) {
-      console.warn(`Post-navigation logic failed for ${page}:`, err);
+      console.warn('Init error:', err);
     }
   }, 100);
 }
